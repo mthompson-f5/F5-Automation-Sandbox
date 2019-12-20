@@ -1,8 +1,8 @@
 F5 Ansible Provisioner
 ======================
-The F5/Ansible provisioner is an opensource provisioning tool that is based on the Ansible Linklight project. It is a collection of Ansible playbooks packaged to build and tear down F5 and application infrastructure. It can also be used to scale the infrastructure as needed by the user. 
+The F5/Ansible provisioner is an open source provisioning tool based on the Ansible Linklight project. It is a collection of Ansible playbooks packaged to build and tear down F5 and application infrastructure. It can also be used to scale the infrastructure as needed by the user. 
 
-The provisioner is made available as a Docker container to avoid environmental dependencies. In order to run the provisioner you will need the `Docker <https://docs.docker.com/install>`_ Community Edition.
+The provisioner is made available as a Docker container to avoid environmental dependencies. In order to run the provisioner you will need `Docker <https://docs.docker.com/install>`_ Community Edition.
 
 This version of the provisioner can be used to deploy the following components into AWS. To run the provisioner you will need - An account on `AWS <https://aws.amazon.com/>`__
 
@@ -16,10 +16,10 @@ This version of the provisioner can be used to deploy the following components i
 Installing the Provisioner
 --------------------------
 
-**Install docker**
+**Install Docker**
 
 Using your local machine or a dedicated host, install `Docker <https://docs.docker.com/install/>`_.
-Elsewhere in these instructions we will refer to the machine with the docker installation as **docker_host**.
+Elsewhere in these instructions we will refer to the machine with the docker installation as the **docker_host**.
 
 **Clone the Repo**
 
@@ -46,8 +46,8 @@ This command will take a few minutes to complete.
 **AWS Setup**
 
 - Create an Amazon AWS account
-- Create an Access Key ID and Secret Access Key. Save the ID and key for later.
-- New to AWS and not sure what this step means? `Click here <https://aws.amazon.com/premiumsupport/knowledge-center/create-access-key/>`__
+- Create an Access Key ID and Secret Access Key. Save this ID and key for later.
+- If you are new to AWS and not sure what this step means, `Click here <https://aws.amazon.com/premiumsupport/knowledge-center/create-access-key/>`__
 - Make sure you have subscribed to the right marketplace AMI (Amazon Machine Image).
   
   - F5 BIG-IP `Click here to subscribe <https://aws.amazon.com/marketplace/pp/B079C44MFH/>`__
@@ -68,8 +68,8 @@ Now you can start to provision your application environment in AWS.
    - Modify the AWS region on which the infrastructure will spin up
    - Modify the ec2_name_prefix to represent a workshop unique to your environment
    - Modify the number of students for which the environment needs to be spun up
-   - There is a dependancy on your personal AWS environment resources available if you have a large number of students
-     - Modify the password, this password will be used to login to all machines including BIG-IP	  
+   - There is a dependency on your personal AWS environment resources available if you have a large number of students
+     - Modify the password. This password will be used to login to all machines including BIG-IP	  
 
    .. code:: yaml
 
@@ -88,7 +88,7 @@ Now you can start to provision your application environment in AWS.
       # workshp runs in F5 mode
       workshop_type: f5
 
-2. Run the Ansible playbook using the AWS ID and KEY saved earlier
+2. Run the Ansible playbook using the AWS ID and Secret Access Key saved earlier.
 
    .. code:: 
 
@@ -159,10 +159,10 @@ Example: Make sure to go to the provisioner directoy
 
 .. note::
 
-   If there are more students configured there will be more entries to represent each student
+   If there are more students configured, there will be more entries to represent each student.
    
 1. Login to Ansible control node (IP from inventory file above) using the studentID and the password
-   mentioned in the f5_vars.yml earlier
+   mentioned in the f5_vars.yml earlier.
 
 .. code::
 
@@ -213,13 +213,13 @@ Example: Make sure to go to the provisioner directoy
 	  
    .. note::
     
-      The IP's in your environment will defer.
+      The IP's in your environment will differ.
 	  
-      The values from the inventory file will be used in subsequent playbooks
+      The values from the inventory file will be used in subsequent playbooks.
 	
 4. Using your text editor of choice create a new file called bigip-facts.yml in the home directory ~/
 
-   The BIG-IP input values are taken from the inventory file mentioned earlier
+   The BIG-IP input values are taken from the inventory file mentioned earlier.
 
    .. code:: yaml
 
@@ -348,4 +348,4 @@ Your access to the BIG-IP is verified.
 
 **Congratulations, your lab is up and running!**
 
-In the next section(s) you can explore Ansible use cases and the 101 lab that can be run on the environment you just built.
+In the next section, you can explore Ansible use cases and the 101 lab that can be run on the environment you just built.
